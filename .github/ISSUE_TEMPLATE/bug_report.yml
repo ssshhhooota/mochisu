@@ -1,0 +1,80 @@
+name: Bug report
+description: Report a bug or unexpected behavior in ghissues.
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the form below.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A clear and concise description of the bug.
+      placeholder: When I run ghissues with ..., it ...
+    validations:
+      required: true
+  - type: input
+    id: ghissues-version
+    attributes:
+      label: ghissues version
+      description: Output of `ghissues --version` (or the commit SHA if built from source).
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: gh-version
+    attributes:
+      label: gh CLI version
+      description: Output of `gh --version`.
+      placeholder: gh version 2.x.x
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: OS and terminal
+      description: Operating system and terminal emulator (and version if relevant).
+      placeholder: macOS 14.5, iTerm2 3.5
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps to reproduce the behavior.
+      placeholder: |
+        1. Run `ghissues <owner>`
+        2. Select repository `<repo>`
+        3. Press `<key>`
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Debug logs
+      description: |
+        Optional. Run with `DEBUG=1 ghissues ...` and paste the contents of `debug.log` here.
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else worth knowing (screenshots, related issues, workarounds, etc.).
+    validations:
+      required: false
