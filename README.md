@@ -1,4 +1,4 @@
-# ghissues
+# mochisu
 
 A terminal UI for browsing GitHub issues.
 
@@ -13,14 +13,14 @@ A terminal UI for browsing GitHub issues.
 ### Homebrew
 
 ```bash
-brew install ssshhhooota/tap/ghissues
+brew install ssshhhooota/tap/mochisu
 ```
 
 ### Build from source
 
 ```bash
-git clone https://github.com/ssshhhooota/ghissues
-cd ghissues
+git clone https://github.com/ssshhhooota/mochisu
+cd mochisu
 make build
 ```
 
@@ -32,10 +32,10 @@ make build
 
 ```bash
 # List your own repositories
-ghissues
+mochisu
 
 # List repositories for a specific user or organization
-ghissues <owner>
+mochisu <owner>
 ```
 
 In the TUI, select a repository to view its issues, then select an issue to open it in your browser.

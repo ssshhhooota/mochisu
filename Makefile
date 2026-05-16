@@ -1,4 +1,4 @@
-BINARY_NAME := ghissues
+BINARY_NAME := mochisu
 BIN_DIR     := bin
 
 .DEFAULT_GOAL := help

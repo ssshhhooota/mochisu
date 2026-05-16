@@ -1,4 +1,4 @@
-module ghissues
+module mochisu
 
 go 1.26.1
 

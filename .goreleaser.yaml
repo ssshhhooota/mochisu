@@ -1,15 +1,15 @@
 version: 2
 
-project_name: ghissues
+project_name: mochisu
 
 before:
   hooks:
     - go mod tidy
 
 builds:
-  - id: ghissues
+  - id: mochisu
     main: .
-    binary: ghissues
+    binary: mochisu
     env:
       - CGO_ENABLED=0
     goos:
@@ -47,18 +47,18 @@ changelog:
       - "^style:"
 
 brews:
-  - name: ghissues
+  - name: mochisu
     repository:
       owner: ssshhhooota
       name: homebrew-tap
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
-    homepage: "https://github.com/ssshhhooota/ghissues"
+    homepage: "https://github.com/ssshhhooota/mochisu"
     description: "Browse GitHub issues in your terminal"
     license: "MIT"
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
     install: |
-      bin.install "ghissues"
+      bin.install "mochisu"
     test: |
-      assert_predicate bin/"ghissues", :exist?
+      assert_predicate bin/"mochisu", :exist?
