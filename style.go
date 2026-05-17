@@ -3,8 +3,10 @@ package main
 import "charm.land/lipgloss/v2"
 
 var (
-	colorAccent = lipgloss.Color("63")
-	colorDim    = lipgloss.Color("240")
+	colorAccent      = lipgloss.Color("63")
+	colorDim         = lipgloss.Color("240")
+	colorStateOpen   = lipgloss.Color("#3FB950")
+	colorStateClosed = lipgloss.Color("#8957E5")
 )
 
 var (

@@ -23,6 +23,7 @@ type issue struct {
 	Body   string `json:"body"`
 	Number int    `json:"number"`
 	URL    string `json:"url"`
+	State  string `json:"state"`
 }
 
 type model struct {
@@ -60,10 +61,7 @@ func newModel(repos []repo) model {
 		repos: repos,
 	}
 	m.form = newRepoForm(repos)
-	d := list.NewDefaultDelegate()
-	d.ShowDescription = false
-	d.SetSpacing(0)
-	l := list.New([]list.Item{}, d, 0, 0)
+	l := list.New([]list.Item{}, newIssueDelegate(), 0, 0)
 	l.SetStatusBarItemName("issues", "issue")
 	l.SetShowHelp(true)
 	l.SetShowTitle(true)

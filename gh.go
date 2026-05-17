@@ -39,7 +39,7 @@ func fetchRepos(owner string) ([]repo, error) {
 
 // gh issue list --json -h
 func fetchIssues(repo string) ([]issue, error) {
-	return ghJSON[[]issue](3*time.Second, "issue", "list", "--json", "title,body,number,url", "-R", repo)
+	return ghJSON[[]issue](3*time.Second, "issue", "list", "--json", "title,body,number,url,state", "-R", repo)
 }
 
 func openIssueInBrowser(repo string, number int) error {
