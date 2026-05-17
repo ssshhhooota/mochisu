@@ -88,18 +88,18 @@ func TestFetchIssues(t *testing.T) {
 	var capturedArgs []string
 	defer withGhExec(func(ctx context.Context, args ...string) (bytes.Buffer, bytes.Buffer, error) {
 		capturedArgs = args
-		return bufOf(`[{"title":"t","body":"b","number":1,"url":"u"}]`), bytes.Buffer{}, nil
+		return bufOf(`[{"title":"t","body":"b","number":1,"url":"u","state":"OPEN"}]`), bytes.Buffer{}, nil
 	})()
 
 	got, err := fetchIssues("owner/repo")
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
-	wantArgs := []string{"issue", "list", "--json", "title,body,number,url", "-R", "owner/repo"}
+	wantArgs := []string{"issue", "list", "--json", "title,body,number,url,state", "-R", "owner/repo"}
 	if !reflect.DeepEqual(capturedArgs, wantArgs) {
 		t.Errorf("args = %v, want %v", capturedArgs, wantArgs)
 	}
-	want := []issue{{Name: "t", Body: "b", Number: 1, URL: "u"}}
+	want := []issue{{Name: "t", Body: "b", Number: 1, URL: "u", State: "OPEN"}}
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("got %+v, want %+v", got, want)
 	}
